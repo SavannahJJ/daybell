@@ -1,5 +1,7 @@
 # DayBell｜点点闹钟 — Legal pages
 
+Live at <https://savannahjj.github.io/daybell/>
+
 Privacy Policy and Terms of Use for the iOS app DayBell｜点点闹钟
 (`com.jingfanxiao.daybell`), served as a static site on GitHub Pages.
 
