@@ -1,0 +1,159 @@
+/* Self-contained: GitHub Pages serves this from the repo, and a policy page that depends on a
+   CDN is a policy page that breaks when the CDN does. No fonts, no scripts, no trackers —
+   which would be a poor joke on a privacy page. */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f5f6f8;
+  --text: #13161a;
+  --muted: #5c6470;
+  --line: #e2e5ea;
+  --accent: #0a5bd0;
+  --warn-bg: #fff6e5;
+  --warn-line: #f0c36d;
+  --warn-text: #5c4310;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1013;
+    --surface: #171a1f;
+    --text: #e8eaee;
+    --muted: #9aa3b0;
+    --line: #272c34;
+    --accent: #6aa6ff;
+    --warn-bg: #2a2212;
+    --warn-line: #6b5520;
+    --warn-text: #f0d79a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 20px 80px;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; }
+
+header {
+  padding: 56px 0 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.brand svg { flex: none; border-radius: 22%; }
+
+.brand-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.brand-sub { font-size: 14px; color: var(--muted); }
+
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 {
+  font-size: 20px;
+  margin: 44px 0 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  letter-spacing: -0.01em;
+}
+h2:first-of-type { border-top: 0; padding-top: 0; }
+h3 { font-size: 16px; margin: 26px 0 8px; }
+
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+.updated { font-size: 14px; color: var(--muted); margin: 0; }
+
+a { color: var(--accent); }
+
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+
+code {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  overflow-wrap: anywhere;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { font-weight: 600; white-space: nowrap; }
+
+.callout {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  color: var(--warn-text);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 20px 0;
+}
+.callout p { color: inherit; margin: 6px 0; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+
+.langbar { display: flex; gap: 10px; margin: 0 0 8px; }
+.langbar a {
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 14px;
+  color: var(--muted);
+}
+.langbar a.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+nav.pages { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+nav.pages a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Each language is its own page rather than one page toggled by CSS: a policy that hides half
+   its text behind a stylesheet is a policy that can be served wrong. */
